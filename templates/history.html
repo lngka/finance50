@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+        <table width=50%>
+             <caption text-align="center">Current Portfolio</caption>
+            <tr>
+                <th>Date</th>
+                <th>Transaction Type</th>
+                <th>Stock</th>
+                <th>Share(s)</th>
+                <th>At price</th>
+            </tr>
+            {% for item in history %}
+            <tr>
+                <td>{{ item["Date"] }}</td>
+                <td>{{ item["Transaction Type"] }}</td>
+                <td>{{ item["Symbol"] }}</td>
+                <td>{{ item["Ammount"] }}</td>
+                <td>{{ item["Price"] }}</td>
+            </tr>
+            {% endfor%}
+        </table>
+        </br>
+{% endblock %}
